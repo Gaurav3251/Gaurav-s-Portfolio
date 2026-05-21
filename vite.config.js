@@ -20,7 +20,7 @@ export default defineConfig({
         }
       }
     },
-    minify: 'terser',
+    minify: 'esbuild',
     terserOptions: {
       compress: {
         drop_console: true
