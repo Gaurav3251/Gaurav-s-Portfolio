@@ -23,7 +23,7 @@ export default function Skills() {
           <div className="w-16 h-1 bg-accent-cyan rounded-full" />
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           {skillsData.categories.map((category, idx) => {
             const IconComponent = iconMap[category.icon] || Code2
 

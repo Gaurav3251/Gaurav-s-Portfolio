@@ -11,17 +11,6 @@
       ]
     },
     {
-      "id": 2,
-      "name": "Frontend",
-      "icon": "palette",
-      "skills": [
-        { "name": "React", "proficiency": 85 },
-        { "name": "Tailwind CSS", "proficiency": 90 },
-        { "name": "HTML/CSS", "proficiency": 90 },
-        { "name": "Framer Motion", "proficiency": 75 }
-      ]
-    },
-    {
       "id": 3,
       "name": "Backend & APIs",
       "icon": "server",
@@ -48,7 +37,7 @@
     },
     {
       "id": 5,
-      "name": "Tools & DevOps",
+      "name": "Tools",
       "icon": "wrench",
       "skills": [
         { "name": "Git/GitHub", "proficiency": 85 },
