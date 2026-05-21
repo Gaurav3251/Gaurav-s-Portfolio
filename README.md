@@ -7,13 +7,14 @@ A stunning, production-ready personal portfolio website built with **React**, **
 - ✅ **Fully Responsive** — Mobile-first design, works on all devices
 - ✅ **Dark Mode** — Default dark theme with light mode toggle (persisted in localStorage)
 - ✅ **Smooth Animations** — Scroll-triggered animations with Framer Motion
-- ✅ **Custom Cursor** — Trailing cyan dot cursor
+- ✅ **Custom Cursor** — Trailing cyan dot cursor with glow effect
 - ✅ **Performance Optimized** — Lazy loading, code splitting, Lighthouse 90+
 - ✅ **SEO Ready** — Meta tags, Open Graph, JSON-LD schema
 - ✅ **Accessibility** — ARIA labels, keyboard navigation, reduced motion support
 - ✅ **Form Validation** — Contact form with validation feedback
 - ✅ **Fast Deployment** — Vercel integration with instant deploys
-- ✅ **Certifications** — Display professional certifications with verification links
+- ✅ **Certifications Display** — Professional certifications with Credly verification links
+- ✅ **Environment Variables** — Secure configuration management
 
 ## 🎨 Tech Stack
 
@@ -32,8 +33,8 @@ A stunning, production-ready personal portfolio website built with **React**, **
 portfolio/
 ├── public/
 │   ├── assets/
-│   │   ├── resume.pdf
-│   │   ├── profile.jpg
+│   │   ├── resume.pdf           # Your resume (replace placeholder)
+│   │   ├── profile.jpg          # Your profile photo (replace placeholder)
 │   │   ├── projects/
 │   │   │   ├── brain-stroke.jpg
 │   │   │   └── asl-recognition.jpg
@@ -48,7 +49,8 @@ portfolio/
 │   │   ├── layout/
 │   │   │   ├── Navbar.jsx
 │   │   │   ├── Footer.jsx
-│   │   │   └── Layout.jsx
+│   │   │   ├── Layout.jsx
+│   │   │   └── index.js
 │   │   ├── sections/
 │   │   │   ├── Hero.jsx
 │   │   │   ├── About.jsx
@@ -93,13 +95,13 @@ portfolio/
 │   ├── main.jsx
 │   └── index.html
 │
+├── .env.example              # Environment variables template
+├── .gitignore
 ├── vite.config.js
 ├── tailwind.config.js
 ├── postcss.config.js
 ├── vercel.json
 ├── package.json
-├── .env.example
-├── .gitignore
 └── README.md
 ```
 
@@ -109,6 +111,7 @@ portfolio/
 
 - Node.js 16+
 - npm or yarn
+- Git
 
 ### Installation
 
@@ -123,110 +126,33 @@ portfolio/
    npm install
    ```
 
-3. **Create asset directories:**
+3. **(Optional) Setup environment variables:**
    ```bash
-   mkdir -p public/assets/projects
-   mkdir -p public/assets/certifications
+   cp .env.example .env
+   # Edit .env with your custom values (or use defaults)
    ```
 
-4. **Add placeholder files** (see section below)
-
-5. **Start development server:**
+4. **Start development server:**
    ```bash
    npm run dev
    ```
    Opens at `http://localhost:3000`
 
-6. **Build for production:**
+5. **Build for production:**
    ```bash
    npm run build
    ```
 
-7. **Preview production build:**
+6. **Preview production build:**
    ```bash
    npm run preview
    ```
 
-## 📋 Placeholder Files to Add
-
-Before deployment, add these files to make your portfolio complete:
-
-### Required Files
-
-```
-public/assets/
-├── resume.pdf                           [Your Resume]
-├── profile.jpg                          [Your Profile Photo - 400x400px]
-├── projects/
-│   ├── brain-stroke.jpg                [Brain Stroke Detection - 1280x720px]
-│   └── asl-recognition.jpg             [ASL Recognition - 1280x720px]
-└── certifications/
-    ├── oracle-foundations.png          [Oracle Foundations Badge - 300x300px]
-    └── oracle-genai-pro.png            [Oracle GenAI Pro Badge - 300x300px]
-```
-
-### How to Add Files
-
-1. **Resume PDF:**
-   - Create/convert your resume to PDF
-   - Save as `resume.pdf`
-   - Place in `/public/assets/`
-
-2. **Profile Photo:**
-   - Take a professional headshot
-   - Crop to 400x400px (square)
-   - Save as `profile.jpg` (or png/webp)
-   - Place in `/public/assets/`
-
-3. **Project Images:**
-   - Screenshot your projects
-   - Crop to 16:9 ratio (e.g., 1280x720)
-   - Save with correct names
-   - Place in `/public/assets/projects/`
-
-4. **Certification Badges:**
-   - Go to [Credly.com](https://www.credly.com/)
-   - Find your certification badges
-   - Right-click → Save Image
-   - Save as PNG files
-   - Place in `/public/assets/certifications/`
-
-## 🔗 Add Credly Certification Links
-
-After adding badge images, update `src/data/certifications.json` with Credly links:
-
-1. Go to your [Credly profile](https://www.credly.com/users/your-username)
-2. Click each certification
-3. Copy the URL from address bar
-4. Update `credentialUrl` in certifications.json:
-
-```json
-{
-  "id": 1,
-  "credentialUrl": "https://www.credly.com/badges/YOUR-BADGE-ID",
-  ...
-}
-```
-
-## 📝 Customization
-
-### Update Personal Information
-
-Edit `src/utils/constants.js` or create `.env` file:
-
-```javascript
-// OR in .env file:
-VITE_SITE_NAME=Gaurav Tarate
-VITE_SITE_TITLE=AI/ML Developer
-VITE_SITE_TAGLINE=Your tagline here
-VITE_CONTACT_EMAIL=your.email@example.com
-VITE_SITE_LOCATION=Your Location
-VITE_RESUME_URL=/assets/resume.pdf
-```
+## 📋 Customization
 
 ### Update Portfolio Content
 
-All content is in JSON files for easy updates:
+All portfolio content is stored in JSON files for easy updates:
 
 - **Experience**: `src/data/experience.json`
 - **Projects**: `src/data/projects.json`
@@ -235,9 +161,69 @@ All content is in JSON files for easy updates:
 - **Education**: `src/data/education.json`
 - **Social Links**: `src/data/social.json`
 
+### Update Personal Information
+
+**Option 1: Hardcoded (Simple)**
+Edit `src/utils/constants.js`:
+```javascript
+export const SITE_CONFIG = {
+  name: 'Your Name',
+  title: 'Your Title',
+  // ... rest of config
+}
+```
+
+**Option 2: Environment Variables (Recommended)**
+1. Copy `.env.example` to `.env`
+2. Edit `.env` with your values
+3. Variables automatically load via `import.meta.env.VITE_*`
+
+### Add/Update Profile Picture
+
+1. Replace `/public/assets/profile.jpg` with your image
+2. Ensure image is optimized (recommended: 500x500px, ~100KB)
+
+### Add/Update Resume
+
+1. Replace `/public/assets/resume.pdf` with your actual resume
+2. The download button automatically links to this file
+
+### Add/Update Certification Badges
+
+1. Download badges from Credly:
+   - Visit your Credly profile
+   - Click each certification
+   - Right-click badge → Save As
+   - Save to `/public/assets/certifications/`
+
+2. Update `src/data/certifications.json`:
+   ```json
+   {
+     "id": 1,
+     "title": "Certification Name",
+     "issuer": "Issuer Name",
+     "date": "2024",
+     "credentialUrl": "https://www.credly.com/badges/your-badge-id",
+     "badgeImage": "/assets/certifications/your-badge.png",
+     "description": "Description of certification"
+   }
+   ```
+
+### Customize Colors
+
+Edit `tailwind.config.js` theme colors:
+
+```javascript
+colors: {
+  accent: {
+    cyan: '#06E6FF',  // Change accent color here
+  }
+}
+```
+
 ### Add New Projects
 
-Edit `src/data/projects.json`:
+Add to `src/data/projects.json`:
 
 ```json
 {
@@ -245,25 +231,17 @@ Edit `src/data/projects.json`:
   "title": "Your Project Title",
   "description": "Short description",
   "longDescription": "Detailed description",
-  "techStack": ["Tech1", "Tech2"],
-  "liveUrl": "https://...",
-  "githubUrl": "https://github.com/...",
+  "techStack": ["Tech1", "Tech2", "Tech3"],
+  "liveUrl": "https://your-project.com",
+  "githubUrl": "https://github.com/username/project",
   "imageUrl": "/assets/projects/your-project.jpg",
   "featured": true
 }
 ```
 
-### Customize Colors
+### Add New Skills
 
-Edit `tailwind.config.js`:
-
-```javascript
-colors: {
-  accent: {
-    cyan: '#06E6FF',  // Change this color
-  }
-}
-```
+Edit `src/data/skills.json` to add categories or skills with proficiency levels (0-100).
 
 ## 📊 Performance
 
@@ -280,10 +258,11 @@ colors: {
 
 - Semantic HTML structure
 - ARIA labels and roles
-- Keyboard navigation
-- Color contrast compliance
+- Keyboard navigation support
+- Color contrast compliance (WCAG AA)
 - Reduced motion support
 - Focus states on interactive elements
+- Form validation feedback
 
 ## 🌐 Deployment
 
@@ -292,14 +271,14 @@ colors: {
 1. **Push to GitHub:**
    ```bash
    git add .
-   git commit -m "Portfolio complete"
+   git commit -m "Deploy portfolio"
    git push origin main
    ```
 
 2. **Connect to Vercel:**
    - Go to [vercel.com](https://vercel.com)
    - Sign in with GitHub
-   - Click "Import Project"
+   - Click "Add New" → "Project"
    - Select your repository
    - Vercel auto-detects Vite settings
    - Click "Deploy" ✨
@@ -309,51 +288,54 @@ colors: {
    - Add your custom domain
    - Update DNS records as instructed
 
+4. **Environment Variables (Optional):**
+   - In Vercel dashboard → Settings → Environment Variables
+   - Add your variables matching `.env.example`
+
 ### Deploy on Netlify
 
-1. Go to [netlify.com](https://netlify.com)
-2. Click "New site from Git"
-3. Select your repository
-4. Build command: `npm run build`
-5. Publish directory: `dist`
-6. Deploy!
+1. **Connect to Netlify:**
+   - Go to [netlify.com](https://netlify.com)
+   - Connect GitHub account
+   - Select repository
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - Click Deploy ✨
 
 ### Deploy on GitHub Pages
 
-1. Update `package.json`:
+1. **Update package.json:**
    ```json
    "homepage": "https://yourusername.github.io/Gaurav-s-Portfolio"
    ```
 
-2. Install gh-pages:
+2. **Install gh-pages:**
    ```bash
    npm install --save-dev gh-pages
    ```
 
-3. Add deploy scripts to `package.json`:
+3. **Add deploy scripts to package.json:**
    ```json
-   "scripts": {
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d dist"
-   }
+   "deploy": "npm run build && gh-pages -d dist",
+   "predeploy": "npm run build"
    ```
 
-4. Deploy:
+4. **Deploy:**
    ```bash
    npm run deploy
    ```
 
-## 📄 SEO
+## 📝 SEO
 
 The portfolio includes:
 
 - ✅ Meta tags (title, description, keywords)
-- ✅ Open Graph tags (OG image, OG URL, Twitter Card)
+- ✅ Open Graph tags (Twitter Card, OG image, OG URL)
 - ✅ JSON-LD structured data (Person schema)
 - ✅ robots.txt
-- ✅ Sitemap ready
 - ✅ Semantic HTML
 - ✅ Mobile viewport optimization
+- ✅ Sitemap ready
 
 ## 📱 Browser Support
 
@@ -363,7 +345,9 @@ The portfolio includes:
 - Edge (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 🔧 Available Commands
+## 🔧 Development
+
+### Available Commands
 
 ```bash
 # Start dev server
@@ -375,11 +359,20 @@ npm run build
 # Preview production build
 npm run preview
 
-# Lint code (if configured)
+# Lint code
 npm run lint
 ```
 
-## 🎯 Features Explained
+### Project Structure Explanation
+
+- **`src/components/`** — React components organized by type (layout, sections, common)
+- **`src/data/`** — JSON files for portfolio content (easy updates)
+- **`src/styles/`** — Tailwind CSS and custom animations
+- **`src/utils/`** — Utility functions and constants
+- **`public/`** — Static assets (favicon, resume, images)
+- **`src/pages/`** — Page-level components
+
+## ✨ Key Features Explained
 
 ### Hero Section
 - Animated name with stagger effect
@@ -401,17 +394,18 @@ npm run lint
 - Image grid with hover effects
 - Tech stack display
 - GitHub and live demo links
+- Featured project highlighting
 
 ### Skills Section
-- Categorized by type
+- Categorized by type (Frontend, Backend, AI/ML, Tools)
 - Proficiency bars with animations
 - Icon indicators
 
 ### Certifications Section
-- Professional certification display
-- Badge images from Credly
-- Credential verification links
-- Stats section
+- Badge display with hover effects
+- Credly verification links
+- Stats showing total certifications
+- Responsive grid layout
 
 ### Education Section
 - Institution details
@@ -422,6 +416,7 @@ npm run lint
 - Contact form with validation
 - Social media links
 - Email and location info
+- Form success feedback
 
 ## 🤝 Contributing
 
@@ -446,11 +441,12 @@ This project is open source and available under the MIT License.
 ## 🙏 Acknowledgments
 
 - **Framer Motion** — Smooth animations
-- **Tailwind CSS** — Utility-first CSS
+- **Tailwind CSS** — Utility-first CSS framework
 - **React** — UI library
 - **Vite** — Ultra-fast bundler
 - **Vercel** — Hosting & deployment
 - **Lucide React** — Beautiful icons
+- **Oracle University** — Professional certifications
 
 ---
 

@@ -1,1 +1,20 @@
-[{"id": 1, "title": "Oracle Certified Foundations Associate", "issuer": "Oracle University", "date": "2024", "credentialUrl": "", "badgeImage": "/assets/certifications/oracle-foundations.png", "description": "Foundational knowledge of Oracle technologies and cloud concepts"}, {"id": 2, "title": "Oracle Certified Generative AI Professional", "issuer": "Oracle University", "date": "2024", "credentialUrl": "", "badgeImage": "/assets/certifications/oracle-genai-pro.png", "description": "Advanced expertise in Generative AI using Oracle technologies"}]
+[
+  {
+    "id": 1,
+    "title": "Oracle Certified Foundations Associate",
+    "issuer": "Oracle University",
+    "date": "2024",
+    "credentialUrl": "https://www.credly.com/badges/your-badge-id-1",
+    "badgeImage": "/assets/certifications/oracle-foundations.png",
+    "description": "Foundational knowledge of Oracle technologies, cloud concepts, and database fundamentals. Demonstrates expertise in core Oracle services and architectural principles."
+  },
+  {
+    "id": 2,
+    "title": "Oracle Certified Generative AI Professional",
+    "issuer": "Oracle University",
+    "date": "2024",
+    "credentialUrl": "https://www.credly.com/badges/your-badge-id-2",
+    "badgeImage": "/assets/certifications/oracle-genai-pro.png",
+    "description": "Advanced expertise in Generative AI using Oracle technologies. Proficient in implementing AI solutions, prompt engineering, and leveraging Oracle's generative capabilities."
+  }
+]

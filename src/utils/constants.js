@@ -1,10 +1,18 @@
+// Support for environment variables with fallback defaults
+const getEnvVar = (key, defaultValue) => {
+  return import.meta.env[`VITE_${key}`] || defaultValue
+}
+
 export const SITE_CONFIG = {
-  name: import.meta.env.VITE_SITE_NAME || 'Gaurav Tarate',
-  title: import.meta.env.VITE_SITE_TITLE || 'AI/ML Developer',
-  tagline: import.meta.env.VITE_SITE_TAGLINE || 'Exploring the world of AI. My motto is - "Learn. Build. Improve. Repeat"',
-  email: import.meta.env.VITE_CONTACT_EMAIL || 'gaurav.dt108@gmail.com',
-  location: import.meta.env.VITE_SITE_LOCATION || 'Pune, India',
-  resumeUrl: import.meta.env.VITE_RESUME_URL || '/assets/resume.pdf'
+  name: getEnvVar('SITE_NAME', 'Gaurav Tarate'),
+  title: getEnvVar('SITE_TITLE', 'AI/ML Developer'),
+  tagline: getEnvVar(
+    'SITE_TAGLINE',
+    'Exploring the world of AI. My motto is - "Learn. Build. Improve. Repeat"'
+  ),
+  email: getEnvVar('CONTACT_EMAIL', 'gaurav.dt108@gmail.com'),
+  location: getEnvVar('SITE_LOCATION', 'Pune, India'),
+  resumeUrl: getEnvVar('RESUME_URL', '/assets/resume.pdf')
 }
 
 export const ACCENT_COLORS = {
@@ -27,3 +35,6 @@ export const BREAKPOINTS = {
   xl: 1280,
   '2xl': 1536
 }
+
+export const ANALYTICS_ID = getEnvVar('GA_ID', '')
+export const API_URL = getEnvVar('API_URL', '')
