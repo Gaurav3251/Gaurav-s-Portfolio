@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "company": "Celebal Technologies Pvt. Ltd.",
+    "role": "Data Science Intern",
+    "duration": "May 2025 – July 2025",
+    "description": "Built projects on RAG-based Question Answering Chatbot and Customer Churn Prediction Application using modern ML stack.",
+    "contributions": [
+      "Developed a RAG-based Question Answering Chatbot leveraging LangChain and ChromaDB for intelligent document retrieval",
+      "Built Customer Churn Prediction Application with high accuracy using HuggingFace embeddings",
+      "Created interactive visualizations and dashboards using Streamlit and Seaborn",
+      "Optimized model inference with Ollama for faster response times"
+    ],
+    "techStack": [
+      "LangChain",
+      "ChromaDB",
+      "Ollama",
+      "HuggingFace",
+      "Streamlit",
+      "Seaborn",
+      "Python"
+    ],
+    "icon": "briefcase"
+  }
+]

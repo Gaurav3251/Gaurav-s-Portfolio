@@ -64,7 +64,7 @@ export default function Certifications() {
                     aria-label={`Verify ${cert.title} credential`}
                   >
                     <CheckCircle size={16} />
-                    Verify on Credly
+                    Verify Credential
                     <ExternalLink size={14} />
                   </motion.a>
                 </div>
@@ -73,30 +73,6 @@ export default function Certifications() {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          viewport={{ once: true, margin: '0px 0px -50px 0px' }}
-          className="grid md:grid-cols-2 gap-6"
-        >
-          <GlassCard className="text-center hover:shadow-glow transition-all duration-300">
-            <div className="p-2 rounded-lg bg-accent-cyan bg-opacity-10 mb-4 inline-block">
-              <Award size={32} className="text-accent-cyan" />
-            </div>
-            <p className="text-4xl font-bold text-accent-cyan">{certificationsData.length}+</p>
-            <p className="text-dark-muted mt-2">Professional Certifications</p>
-          </GlassCard>
-
-          <GlassCard className="text-center hover:shadow-glow transition-all duration-300">
-            <div className="p-2 rounded-lg bg-accent-cyan bg-opacity-10 mb-4 inline-block">
-              <CheckCircle size={32} className="text-accent-cyan" />
-            </div>
-            <p className="text-4xl font-bold text-accent-cyan">Oracle</p>
-            <p className="text-dark-muted mt-2">Certifying Authority</p>
-          </GlassCard>
-        </motion.div>
       </div>
     </section>
   )

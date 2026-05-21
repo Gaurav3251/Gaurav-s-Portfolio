@@ -74,13 +74,10 @@ export default function Footer() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-dark-muted"
+          className="flex justify-center items-center text-sm text-dark-muted"
         >
-          <p className="text-center md:text-left">
+          <p>
             © {currentYear} {SITE_CONFIG.name}. All rights reserved.
-          </p>
-          <p className="flex items-center gap-1">
-            Made with <Heart size={16} className="text-accent-cyan" /> using React, Tailwind & Framer Motion
           </p>
         </motion.div>
       </div>

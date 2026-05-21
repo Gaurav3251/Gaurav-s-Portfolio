@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Brain Stroke Detection",
+    "description": "Built a platform to classify strokes into 3 classes (Normal, Bleeding, and Ischemia) and segment the stroke region in CT scans using deep learning.",
+    "imageUrl": "/assets/projects/brain stroke thumbnail.png",
+    "youtubeUrl": "https://youtu.be/cVKE-djvNhM",
+    "githubUrl": "https://github.com/yourusername/brain-stroke-detection",
+    "liveUrl": "",
+    "techStack": ["Python", "PyTorch", "OpenCV", "Flask", "React"]
+  },
+  {
+    "id": 2,
+    "title": "American Sign Language Recognition",
+    "description": "Built a real-time website to recognize ASL signs (digits and alphabets) using ML and DL models with live video feed processing.",
+    "imageUrl": "/assets/projects/asl thumbnail.png",
+    "youtubeUrl": "https://youtu.be/L2WTQ3KFwNE",
+    "githubUrl": "https://github.com/yourusername/asl-recognition",
+    "liveUrl": "",
+    "techStack": ["Python", "TensorFlow", "MediaPipe", "React", "Flask"]
+  }
+]

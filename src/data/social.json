@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "platform": "GitHub",
+    "icon": "github",
+    "url": "https://github.com/Gaurav3251",
+    "description": "Check out my code and projects"
+  },
+  {
+    "id": 2,
+    "platform": "LinkedIn",
+    "icon": "linkedin",
+    "url": "https://www.linkedin.com/in/gaurav-tarate/",
+    "description": "Connect with me professionally"
+  },
+  {
+    "id": 4,
+    "platform": "Email",
+    "icon": "mail",
+    "url": "mailto:gaurav.dt108@gmail.com",
+    "description": "Send me an email"
+  }
+]

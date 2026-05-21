@@ -1,0 +1,62 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Programming",
+      "icon": "code",
+      "skills": [
+        { "name": "Python", "proficiency": 95 },
+        { "name": "C++", "proficiency": 75 },
+        { "name": "SQL", "proficiency": 85 }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Frontend",
+      "icon": "palette",
+      "skills": [
+        { "name": "React", "proficiency": 85 },
+        { "name": "Tailwind CSS", "proficiency": 90 },
+        { "name": "HTML/CSS", "proficiency": 90 },
+        { "name": "Framer Motion", "proficiency": 75 }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Backend & APIs",
+      "icon": "server",
+      "skills": [
+        { "name": "Flask", "proficiency": 85 },
+        { "name": "REST APIs", "proficiency": 80 },
+        { "name": "Python Backend", "proficiency": 85 }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "AI/ML",
+      "icon": "brain",
+      "skills": [
+        { "name": "PyTorch", "proficiency": 90 },
+        { "name": "TensorFlow", "proficiency": 80 },
+        { "name": "OpenCV", "proficiency": 85 },
+        { "name": "Mediapipe", "proficiency": 75 },
+        { "name": "spaCy", "proficiency": 80 },
+        { "name": "LangChain", "proficiency": 80 },
+        { "name": "HuggingFace", "proficiency": 85 },
+        { "name": "Streamlit", "proficiency": 85 }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Tools & DevOps",
+      "icon": "wrench",
+      "skills": [
+        { "name": "Git/GitHub", "proficiency": 85 },
+        { "name": "VS Code", "proficiency": 90 },
+        { "name": "Jupyter Notebook", "proficiency": 85 },
+        { "name": "Linux", "proficiency": 75 },
+        { "name": "Docker", "proficiency": 70 }
+      ]
+    }
+  ]
+}

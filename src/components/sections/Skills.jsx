@@ -43,29 +43,19 @@ export default function Skills() {
                     <h3 className="text-xl font-bold text-dark-text">{category.name}</h3>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill, skillIdx) => (
-                      <motion.div
+                      <motion.span
                         key={skill.name}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: (idx * 0.1) + (skillIdx * 0.05), duration: 0.4 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: (idx * 0.1) + (skillIdx * 0.04), duration: 0.3 }}
                         viewport={{ once: true }}
+                        whileHover={{ scale: 1.08 }}
+                        className="px-3 py-1.5 text-sm rounded-full bg-accent-cyan bg-opacity-10 text-accent-cyan border border-accent-cyan border-opacity-30 font-medium cursor-default"
                       >
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-dark-text font-medium">{skill.name}</span>
-                          <span className="text-xs text-accent-cyan font-semibold">{skill.proficiency}%</span>
-                        </div>
-                        <div className="w-full h-2 rounded-full bg-dark-hover overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.proficiency}%` }}
-                            transition={{ delay: (idx * 0.1) + (skillIdx * 0.05) + 0.3, duration: 0.8, ease: 'easeOut' }}
-                            viewport={{ once: true }}
-                            className="h-full rounded-full bg-gradient-to-r from-accent-cyan to-accent-cyan-light"
-                          />
-                        </div>
-                      </motion.div>
+                        {skill.name}
+                      </motion.span>
                     ))}
                   </div>
                 </GlassCard>

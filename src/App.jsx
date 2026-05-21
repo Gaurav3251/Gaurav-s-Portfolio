@@ -5,26 +5,20 @@ import './App.css'
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
-    // Check localStorage first
     const saved = localStorage.getItem('theme')
     if (saved) return saved
-    
-    // Check system preference
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    }
-    return 'dark' // Default to dark
+    return 'dark'
   })
 
   useEffect(() => {
-    // Update localStorage and DOM when theme changes
     localStorage.setItem('theme', theme)
-    const html = document.documentElement
-    
+    // Apply to <html> tag — this is what Tailwind's darkMode: 'class' reads
     if (theme === 'dark') {
-      html.classList.add('dark')
+      document.documentElement.classList.add('dark')
+      document.documentElement.classList.remove('light')
     } else {
-      html.classList.remove('dark')
+      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.add('light')
     }
   }, [theme])
 
@@ -34,11 +28,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className={`min-h-screen bg-dark-bg transition-colors duration-300 ${
-        theme === 'dark' ? 'dark' : 'light'
-      }`}>
-        <Home toggleTheme={toggleTheme} currentTheme={theme} />
-      </div>
+      <Home toggleTheme={toggleTheme} currentTheme={theme} />
     </BrowserRouter>
   )
 }
