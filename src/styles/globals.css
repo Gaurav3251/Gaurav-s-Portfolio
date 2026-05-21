@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark-bg text-dark-text font-sans leading-relaxed;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent-cyan rounded-full hover:bg-accent-cyan-dark;
+    background-image: linear-gradient(180deg, #06E6FF, #00D4F0);
+  }
+
+  * {
+    scrollbar-color: #06E6FF #0a0a0a;
+    scrollbar-width: thin;
+  }
+
+  ::selection {
+    @apply bg-accent-cyan text-dark-bg;
+  }
+}
+
+@layer components {
+  .magnetic-btn {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .magnetic-btn::before {
+    content: '';
+    @apply absolute inset-0 bg-accent-cyan opacity-0 transition-opacity duration-300;
+  }
+
+  .magnetic-btn:hover::before {
+    @apply opacity-20;
+  }
+
+  .glass-card {
+    @apply bg-dark-surface bg-opacity-40 backdrop-blur-md border border-opacity-20 border-accent-cyan rounded-xl;
+  }
+
+  .glow-effect {
+    @apply shadow-glow;
+  }
+
+  .glow-effect:hover {
+    @apply shadow-glow-lg;
+  }
+
+  .card-tilt {
+    @apply transition-transform duration-300 transform-gpu;
+    perspective: 1000px;
+  }
+
+  .card-tilt:hover {
+    transform: rotateX(5deg) rotateY(-5deg) scale(1.02);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-cyan via-white to-accent-cyan bg-clip-text text-transparent;
+  }
+
+  .frosted-glass {
+    @apply bg-dark-surface bg-opacity-30 backdrop-blur-xl border border-dark-border border-opacity-30;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      @apply !animate-none !transition-none !duration-0;
+    }
+
+    .card-tilt:hover {
+      transform: none;
+    }
+  }
+}
