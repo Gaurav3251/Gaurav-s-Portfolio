@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
   ),
   email: getEnvVar('CONTACT_EMAIL', 'gaurav.dt108@gmail.com'),
   location: getEnvVar('SITE_LOCATION', 'Pune, India'),
-  resumeUrl: getEnvVar('RESUME_URL', '/assets/resume.pdf')
+  resumeUrl: getEnvVar('RESUME_URL', 'https://drive.google.com/drive/folders/1t1IHNOfhWYvslQ1voGkIUzG2nFl8rgjZ?usp=drive_link')
 }
 
 export const ACCENT_COLORS = {

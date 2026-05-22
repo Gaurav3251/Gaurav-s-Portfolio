@@ -20,12 +20,7 @@ export default defineConfig({
         }
       }
     },
-    minify: 'esbuild',
-    terserOptions: {
-      compress: {
-        drop_console: true
-      }
-    }
+    minify: 'esbuild'
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'framer-motion', 'lucide-react']
