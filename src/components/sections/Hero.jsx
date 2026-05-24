@@ -60,7 +60,7 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full max-w-5xl flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16"
+        className="w-full max-w-5xl flex flex-col-reverse md:flex-row items-center md:items-center gap-10 md:gap-16"
       >
         {/* ── LEFT: Text ─────────────────────────────────────────── */}
         <div className="flex-1 text-center md:text-left">
@@ -124,29 +124,14 @@ export default function Hero() {
         {/* ── RIGHT: Profile Photo ───────────────────────────────── */}
         <motion.div
           variants={itemVariants}
-          className="flex-shrink-0 flex justify-center"
+          className="flex-shrink-0 flex justify-center items-center"
         >
-          <div className="relative w-56 h-56 sm:w-64 sm:h-64">
-            {!imgError ? (
-              <img
-                src={profileSrc}
-                alt="Gaurav Tarate"
-                className="w-full h-full object-cover object-top rounded-2xl"
-                style={{
-                  maskImage: 'radial-gradient(ellipse 85% 85% at 50% 40%, black 60%, transparent 100%)',
-                  WebkitMaskImage: 'radial-gradient(ellipse 85% 85% at 50% 40%, black 60%, transparent 100%)',
-                }}
-                onError={() => setImgError(true)}
-              />
-            ) : (
-              <div className="w-full h-full rounded-2xl bg-dark-surface flex flex-col items-center justify-center gap-2 text-accent-cyan border border-accent-cyan border-opacity-20">
-                <User size={64} strokeWidth={1} />
-                <span className="text-xs text-dark-muted">profile image missing</span>
-              </div>
-            )}
-            {/* subtle glow underneath */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-accent-cyan opacity-20 blur-xl rounded-full -z-10" />
-          </div>
+          <img
+            src={profileSrc}
+            alt="Gaurav Tarate"
+            className="w-80 sm:w-96 h-auto object-contain -mt-32"
+            onError={() => setImgError(true)}
+          />
         </motion.div>
       </motion.div>
 
