@@ -6,10 +6,8 @@
     "duration": "May 2025 – July 2025",
     "description": "Built projects on RAG-based Question Answering Chatbot and Customer Churn Prediction Application using modern ML stack.",
     "contributions": [
-      "Developed a RAG-based Question Answering Chatbot leveraging LangChain and ChromaDB for intelligent document retrieval",
-      "Built Customer Churn Prediction Application with high accuracy using HuggingFace embeddings",
-      "Created interactive visualizations and dashboards using Streamlit and Seaborn",
-      "Optimized model inference with Ollama for faster response times"
+      "Developed a RAG-based Question Answering Chatbot leveraging tech stack of LangChain, Ollama, huggingFace and ChromaDB for intelligent document retrieval",
+      "Built Customer Churn Prediction Application with Streamlit on Telecom dataset using ML algorithms like Logistic Regression, Random Forest and XGBoost and seaborn to visualize different relations between features leading to customer churn risk"   
     ],
     "techStack": [
       "LangChain",
