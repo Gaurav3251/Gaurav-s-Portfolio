@@ -5,7 +5,7 @@
     "description": "Built a platform to classify strokes into 3 classes (Normal, Bleeding, and Ischemia) and segment the stroke region in CT scans using various pretrained models. We built a segmentation-guided Ensemble model which is best model in terms of detection achieving a F1-score of 99.04% on test set.",
     "imageUrl": "/assets/projects/brain stroke thumbnail.png",
     "youtubeUrl": "https://youtu.be/cVKE-djvNhM",
-    "githubUrl": "https://github.com/yourusername/brain-stroke-detection",
+    "githubUrl": "https://github.com/Gaurav3251/Brain-Stroke-Detection/tree/brain-stroke-v2",
     "liveUrl": "",
     "techStack": ["Python", "PyTorch", "OpenCV", "Flask", "React"]
   },
@@ -15,7 +15,7 @@
     "description": "Built a real-time website to recognize ASL signs (digits and alphabets) using ML and DL models with live video feed processing. Among ML algorithms used, SVM achieved highest test acccuracy of 95%, while among DL models, ResNet50 achieved highest validation accuracy of 98.3%.",
     "imageUrl": "/assets/projects/asl thumbnail.png",
     "youtubeUrl": "https://youtu.be/L2WTQ3KFwNE",
-    "githubUrl": "https://github.com/yourusername/asl-recognition",
+    "githubUrl": "https://github.com/Shubbhh18/American-Sign-Language-Recognition",
     "liveUrl": "",
     "techStack": ["Python", "TensorFlow", "MediaPipe", "React", "Flask"]
   }
