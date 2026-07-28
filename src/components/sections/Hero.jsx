@@ -129,7 +129,7 @@ export default function Hero() {
           <img
             src={profileSrc}
             alt="Gaurav Tarate"
-            className="w-80 sm:w-96 h-auto object-contain -mt-32"
+            className="w-80 sm:w-96 h-auto object-contain -mt-16"
             onError={() => setImgError(true)}
           />
         </motion.div>
